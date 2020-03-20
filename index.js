@@ -17,3 +17,5 @@ app.get("/", (req, res) => {
   res.send({ status: "OK", message: "Servicio Rest de prueba" });
   res.end();
 });
+
+module.exports = app;
