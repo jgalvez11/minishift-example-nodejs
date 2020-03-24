@@ -1,0 +1,11 @@
+This directory contains a Jenkinsfile which can be used to build nodejs-ex using an OpenShift build pipeline.
+
+To do this, run:
+
+# create the nodejs example as usual
+oc new-app https://github.com/jgalvez11/minishift-example-nodejs.git
+
+# now create the pipeline build controller from the openshift/pipeline
+# subdirectory
+oc new-app https://github.com/jgalvez11/minishift-example-nodejs.git \
+  --context-dir=openshift/pipeline --name nodejs-ex-pipeline
