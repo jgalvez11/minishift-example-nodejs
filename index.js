@@ -24,6 +24,12 @@ app.listen(8080, "0.0.0.0", err => {
   return console.log("SUCCESS Listenning server");
 });
 
+// error handling
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send("Something bad happened!");
+});
+
 app.get("/", (req, res) => {
   res.send({ status: "OK", message: "Servicio Rest de prueba" });
   res.end();

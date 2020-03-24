@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engine": {
-    "node": "12.16.*",
-    "npm": "6.13.*"
+    "node": "*",
+    "npm": "*"
   },
   "repository": {
     "type": "git",
