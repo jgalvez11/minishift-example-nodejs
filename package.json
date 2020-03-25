@@ -1,5 +1,5 @@
 {
-  "name": "com.example.nodejs",
+  "name": "minishift-example-nodejs",
   "version": "1.0.0",
   "description": "Proyecto de prueba",
   "main": "index.js",

@@ -1,6 +1,0 @@
-node('nodejs') {
-  stage 'build'
-  openshiftBuild(buildConfig: 'minishift-example-nodejs', showBuildLogs: 'true')
-  stage 'deploy'
-  openshiftDeploy(deploymentConfig: 'minishift-example-nodejs')
-}

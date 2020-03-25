@@ -1,38 +1,13 @@
-const express = require("express");
-const http = require("http");
+//Load express module with `require` directive
+var express = require("express");
+var app = express();
 
-const app = express();
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-const server = http.createServer((request, response) => {
-  response.statusCode = 200;
-  response.setHeader("Content-Type", "application/json");
-
-  const greeting = { content: "Hola, Mundo REST!" };
-
-  response.write(JSON.stringify(greeting));
-  response.end();
+//Define request response in root URL (/)
+app.get("/", function(req, res) {
+  res.send("Hello World!");
 });
 
-app.listen(8080, "0.0.0.0", err => {
-  if (err) {
-    return console.log("ERROR Listenning server");
-  }
-
-  return console.log("SUCCESS Listenning server");
+//Launch listening server on port 8081
+app.listen(8081, function() {
+  console.log("app listening on port 8081!");
 });
-
-// error handling
-app.use(function(err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).send("Something bad happened!");
-});
-
-app.get("/", (req, res) => {
-  res.send({ status: "OK", message: "Servicio Rest de prueba" });
-  res.end();
-});
-
-module.exports = app;
